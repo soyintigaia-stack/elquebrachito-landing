@@ -376,16 +376,18 @@
     .why-text { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     /* ─── AÑOS ────────────────────────────────────── */
-    .years-band {
-      background: linear-gradient(90deg, rgba(229,98,26,0.06) 0%, rgba(201,136,26,0.04) 50%, rgba(229,98,26,0.06) 100%), var(--bg);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 40px 0;
-      text-align: center;
+    .years-inner {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 24px;
+    }
+    .years-band {
+      background: linear-gradient(90deg, rgba(229,98,26,0.06) 0%, rgba(201,136,26,0.04) 50%, rgba(229,98,26,0.06) 100%), var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
     }
     .years-num {
       font-family: 'Barlow Condensed', sans-serif;
@@ -647,8 +649,10 @@
 
 <!-- AÑOS -->
 <div class="years-band">
-  <div class="years-num">31</div>
-  <div class="years-label">Años<br>eligiendo la<br>transparencia</div>
+  <div class="years-inner">
+    <div class="years-num">31</div>
+    <div class="years-label">Años<br>eligiendo la<br>transparencia</div>
+  </div>
 </div>
 
 <!-- POR QUÉ -->
@@ -663,7 +667,7 @@
       <div class="why-card">
         <div class="why-num">01</div>
         <div class="why-title">Honestidad ante todo</div>
-        <div class="why-text">Te decimos lo que tu auto necesita, sin venderles lo que no hace falta. 31 años construyendo confianza en Almafuerte.</div>
+        <div class="why-text">Te decimos lo que tu auto necesita, sin venderte lo que no hace falta. 31 años construyendo confianza en Almafuerte.</div>
       </div>
       <div class="why-card">
         <div class="why-num">02</div>
