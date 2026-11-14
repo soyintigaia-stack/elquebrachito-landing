@@ -377,30 +377,36 @@
 
     /* ─── AÑOS ────────────────────────────────────── */
     .years-band {
-      background: var(--surface);
+      background: linear-gradient(90deg, rgba(229,98,26,0.06) 0%, rgba(201,136,26,0.04) 50%, rgba(229,98,26,0.06) 100%), var(--bg);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 64px 0;
+      padding: 40px 0;
       text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
     }
     .years-num {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900;
-      font-size: clamp(80px, 15vw, 160px);
-      line-height: 0.9;
+      font-size: clamp(56px, 10vw, 100px);
+      line-height: 1;
       background: var(--grad);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      flex-shrink: 0;
     }
     .years-label {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: clamp(18px, 3vw, 28px);
+      font-size: clamp(14px, 2vw, 20px);
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--muted);
-      margin-top: 8px;
+      text-align: left;
+      line-height: 1.3;
     }
 
     /* ─── UBICACIÓN ───────────────────────────────── */
@@ -640,10 +646,8 @@
 
 <!-- AÑOS -->
 <div class="years-band">
-  <div class="container" style="text-align:center;">
-    <div class="years-num">31</div>
-    <div class="years-label">Años eligiendo la transparencia</div>
-  </div>
+  <div class="years-num">31</div>
+  <div class="years-label">Años<br>eligiendo la<br>transparencia</div>
 </div>
 
 <!-- POR QUÉ -->
