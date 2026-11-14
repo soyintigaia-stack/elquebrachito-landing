@@ -404,6 +404,18 @@
     }
 
     /* ─── UBICACIÓN ───────────────────────────────── */
+    .ubicacion-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .ubicacion-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.72) 30%, rgba(9,8,6,0.72) 70%, rgba(9,8,6,1) 100%),
+        url('lago.jpg') center/cover no-repeat;
+      z-index: 0;
+    }
+    .ubicacion-section .container { position: relative; z-index: 1; }
     .location-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -630,7 +642,8 @@
 </section>
 
 <!-- UBICACIÓN -->
-<section class="section" id="ubicacion" style="padding-top:0;">
+<section class="section ubicacion-section" id="ubicacion" style="padding-top:0;">
+  <div class="ubicacion-bg"></div>
   <div class="container">
     <div class="section-label">Dónde estamos</div>
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,5vw,52px);text-transform:uppercase;letter-spacing:0.03em;">
