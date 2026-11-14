@@ -253,7 +253,20 @@
     .badge-text { font-size: 11px; letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase; }
 
     /* ─── SERVICIOS ───────────────────────────────── */
-    .services { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .services {
+      position: relative;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .services-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(9,8,6,0.93) 0%, rgba(9,8,6,0.88) 50%, rgba(9,8,6,0.95) 100%),
+        url('galpon.jpg') center 30%/cover no-repeat;
+      z-index: 0;
+    }
+    .services .container { position: relative; z-index: 1; }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -265,31 +278,39 @@
       margin-top: 48px;
     }
     .service-card {
-      background: var(--card);
-      padding: 36px 28px;
+      background: rgba(16,14,10,0.82);
+      backdrop-filter: blur(6px);
+      padding: 40px 28px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      transition: background 0.2s;
+      gap: 16px;
+      transition: background 0.25s, border-color 0.25s, transform 0.2s;
+      border-bottom: 2px solid transparent;
     }
-    .service-card:hover { background: rgba(22,20,16,0.95); }
+    .service-card:hover {
+      background: rgba(22,20,16,0.95);
+      border-bottom-color: var(--amber);
+      transform: translateY(-3px);
+    }
     .service-icon {
-      width: 44px; height: 44px;
-      border-radius: 2px;
-      background: rgba(201,136,26,0.08);
-      border: 1px solid var(--border);
+      width: 54px; height: 54px;
+      border-radius: 3px;
+      background: rgba(201,136,26,0.1);
+      border: 1px solid rgba(201,136,26,0.2);
       display: flex; align-items: center; justify-content: center;
-      font-size: 22px;
+      font-size: 26px;
+      transition: background 0.25s;
     }
+    .service-card:hover .service-icon { background: rgba(201,136,26,0.18); }
     .service-name {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 20px;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--text);
     }
-    .service-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .service-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
     /* ─── POR QUÉ ELEGIRNOS ───────────────────────── */
     .why-grid {
@@ -517,6 +538,7 @@
 
 <!-- SERVICIOS -->
 <section class="section services" id="servicios">
+  <div class="services-bg"></div>
   <div class="container">
     <div class="section-label">Lo que hacemos</div>
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,5vw,52px);text-transform:uppercase;letter-spacing:0.03em;">
