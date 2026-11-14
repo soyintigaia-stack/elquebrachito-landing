@@ -521,6 +521,34 @@
       .hero-actions { flex-direction: column; }
       .btn-primary, .btn-secondary { justify-content: center; }
       nav .nav-cta span { display: none; }
+
+      /* Fondos en mobile: overlay más opaco para que el texto respire */
+      .hero-bg {
+        background:
+          radial-gradient(ellipse at 50% 60%, rgba(229,98,26,0.08) 0%, transparent 60%),
+          linear-gradient(180deg, rgba(9,8,6,0.95) 0%, rgba(9,8,6,0.92) 100%),
+          url('gondola.jpg') center 40%/cover no-repeat;
+      }
+      .services-bg {
+        background:
+          linear-gradient(180deg, rgba(9,8,6,0.96) 0%, rgba(9,8,6,0.92) 50%, rgba(9,8,6,0.97) 100%),
+          url('galpon.jpg') center 20%/cover no-repeat;
+      }
+      .why-section-bg {
+        background:
+          linear-gradient(180deg, rgba(9,8,6,0.92) 0%, rgba(9,8,6,0.85) 50%, rgba(9,8,6,0.92) 100%),
+          url('mecanico.jpg') center center/cover no-repeat;
+      }
+      .ubicacion-bg {
+        background:
+          linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.82) 30%, rgba(9,8,6,0.82) 70%, rgba(9,8,6,1) 100%),
+          url('lago.jpg') center 30%/cover no-repeat;
+      }
+      .cta-final-bg {
+        background:
+          linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.88) 20%, rgba(9,8,6,0.88) 80%, rgba(9,8,6,1) 100%),
+          url('local-noche.jpg') center top/cover no-repeat;
+      }
     }
   </style>
 </head>
