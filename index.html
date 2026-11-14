@@ -313,6 +313,18 @@
     .service-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
 
     /* ─── POR QUÉ ELEGIRNOS ───────────────────────── */
+    .why-section {
+      position: relative;
+      overflow: hidden;
+    }
+    .why-section-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(90deg, rgba(9,8,6,0.97) 0%, rgba(9,8,6,0.75) 55%, rgba(9,8,6,0.4) 100%),
+        url('mecanico.jpg') right center/cover no-repeat;
+      z-index: 0;
+    }
+    .why-section .container { position: relative; z-index: 1; }
     .why-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -321,11 +333,18 @@
     }
     .why-card {
       padding: 36px;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(201,136,26,0.15);
       border-radius: 3px;
-      background: rgba(201,136,26,0.03);
+      background: rgba(9,8,6,0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       position: relative;
       overflow: hidden;
+      transition: background 0.25s, border-color 0.25s;
+    }
+    .why-card:hover {
+      background: rgba(9,8,6,0.88);
+      border-color: rgba(201,136,26,0.3);
     }
     .why-card::before {
       content: '';
@@ -583,7 +602,8 @@
 </div>
 
 <!-- POR QUÉ -->
-<section class="section" id="nosotros">
+<section class="section why-section" id="nosotros">
+  <div class="why-section-bg"></div>
   <div class="container">
     <div class="section-label">Por qué elegirnos</div>
     <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(32px,5vw,52px);text-transform:uppercase;letter-spacing:0.03em;">
