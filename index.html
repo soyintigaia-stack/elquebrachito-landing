@@ -522,32 +522,79 @@
       .btn-primary, .btn-secondary { justify-content: center; }
       nav .nav-cta span { display: none; }
 
-      /* Fondos en mobile: overlay más opaco para que el texto respire */
-      .hero-bg {
-        background:
-          radial-gradient(ellipse at 50% 60%, rgba(229,98,26,0.08) 0%, transparent 60%),
-          linear-gradient(180deg, rgba(9,8,6,0.95) 0%, rgba(9,8,6,0.92) 100%),
-          url('gondola.jpg') center 40%/cover no-repeat;
-      }
+      /* Mobile: imagen visible como franja arriba, texto con fondo sólido abajo */
+
+      /* Servicios */
+      .services { padding-top: 0; }
       .services-bg {
-        background:
-          linear-gradient(180deg, rgba(9,8,6,0.96) 0%, rgba(9,8,6,0.92) 50%, rgba(9,8,6,0.97) 100%),
-          url('galpon.jpg') center 20%/cover no-repeat;
+        height: 220px;
+        position: relative;
+        background: url('galpon.jpg') center 20%/cover no-repeat;
+        flex-shrink: 0;
       }
+      .services-bg::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(9,8,6,0.3) 0%, rgba(9,8,6,0.85) 100%);
+      }
+      .services .container { background: var(--bg); padding-top: 32px; }
+
+      /* Por qué elegirnos */
+      .why-section { padding-top: 0; }
       .why-section-bg {
-        background:
-          linear-gradient(180deg, rgba(9,8,6,0.92) 0%, rgba(9,8,6,0.85) 50%, rgba(9,8,6,0.92) 100%),
-          url('mecanico.jpg') center center/cover no-repeat;
+        height: 220px;
+        position: relative;
+        background: url('mecanico.jpg') center 30%/cover no-repeat;
+        flex-shrink: 0;
       }
+      .why-section-bg::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(9,8,6,0.2) 0%, rgba(9,8,6,0.9) 100%);
+      }
+      .why-section .container { background: var(--bg); padding-top: 32px; }
+
+      /* Ubicación */
+      .ubicacion-section { padding-top: 0; }
       .ubicacion-bg {
-        background:
-          linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.82) 30%, rgba(9,8,6,0.82) 70%, rgba(9,8,6,1) 100%),
-          url('lago.jpg') center 30%/cover no-repeat;
+        height: 200px;
+        position: relative;
+        background: url('lago.jpg') center 40%/cover no-repeat;
+        flex-shrink: 0;
       }
+      .ubicacion-bg::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(9,8,6,0.1) 0%, rgba(9,8,6,0.85) 100%);
+      }
+      .ubicacion-section .container { background: var(--bg); padding-top: 32px; }
+
+      /* CTA Final */
+      .cta-final { padding-top: 0; }
       .cta-final-bg {
-        background:
-          linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.88) 20%, rgba(9,8,6,0.88) 80%, rgba(9,8,6,1) 100%),
-          url('local-noche.jpg') center top/cover no-repeat;
+        height: 220px;
+        position: relative;
+        background: url('local-noche.jpg') center top/cover no-repeat;
+        flex-shrink: 0;
+      }
+      .cta-final-bg::after {
+        content: '';
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(9,8,6,0.2) 0%, rgba(9,8,6,0.9) 100%);
+      }
+      .cta-final .container { background: var(--bg); padding-top: 32px; }
+
+      /* Sections con imagen necesitan flex column para que el bg-div sea real */
+      .services, .why-section, .ubicacion-section, .cta-final {
+        display: flex;
+        flex-direction: column;
+      }
+      .services > .services-bg,
+      .why-section > .why-section-bg,
+      .ubicacion-section > .ubicacion-bg,
+      .cta-final > .cta-final-bg {
+        position: relative !important;
+        inset: unset !important;
       }
     }
   </style>
