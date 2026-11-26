@@ -148,7 +148,7 @@
         radial-gradient(ellipse at 15% 60%, rgba(229,98,26,0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 85% 40%, rgba(191,155,48,0.08) 0%, transparent 50%),
         linear-gradient(180deg, rgba(9,8,6,0.92) 0%, rgba(9,8,6,0.88) 100%),
-        url('galpon.jpg') center 40%/cover no-repeat;
+        url('gondola-mann-mahle.jpg') center/cover no-repeat;
     }
     .hero-grid {
       position: absolute; inset: 0;
@@ -296,8 +296,8 @@
     .services-bg {
       position: absolute; inset: 0;
       background:
-        radial-gradient(ellipse at 85% 20%, rgba(229,98,26,0.08) 0%, transparent 55%),
-        var(--surface);
+        linear-gradient(180deg, rgba(9,8,6,0.93) 0%, rgba(9,8,6,0.88) 50%, rgba(9,8,6,0.95) 100%),
+        url('galpon.jpg') center 30%/cover no-repeat;
       z-index: 0;
     }
     .services .container { position: relative; z-index: 1; }
@@ -567,6 +567,13 @@
 
       /* Mobile: fondo absoluto igual que desktop, pero con padding-top grande
          para que la imagen sea visible sobre el texto */
+
+      .services { padding-top: 200px; }
+      .services-bg {
+        background:
+          linear-gradient(180deg, rgba(9,8,6,0.65) 0%, rgba(9,8,6,0.55) 40%, rgba(9,8,6,0.95) 70%, rgba(9,8,6,1) 100%),
+          url('galpon.jpg') center 60%/cover no-repeat;
+      }
 
       .why-section { padding-top: 200px; }
       .why-section-bg {
