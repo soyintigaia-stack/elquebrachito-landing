@@ -7,11 +7,13 @@
   <meta name="description" content="Lubricentro en Almafuerte, Córdoba. Cambio de aceite, filtros, pulido de ópticas y más. 33 años de calidad y transparencia.">
   <meta property="og:title" content="El Quebrachito — Lubricentro Almafuerte">
   <meta property="og:description" content="Cambio de aceite, filtros, pulido de ópticas y más. 33 años eligiendo la transparencia en Almafuerte, Córdoba.">
-  <meta property="og:image" content="https://lubricentroelquebrachito.com/galpon.jpg">
+  <meta property="og:image" content="https://lubricentroelquebrachito.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://lubricentroelquebrachito.com/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://lubricentroelquebrachito.com/galpon.jpg">
+  <meta name="twitter:image" content="https://lubricentroelquebrachito.com/og-image.jpg">
   <link rel="canonical" href="https://lubricentroelquebrachito.com/">
   <script type="application/ld+json">
   {
@@ -20,7 +22,7 @@
     "name": "El Quebrachito",
     "description": "Lubricentro y repuestos en Almafuerte, Córdoba. Cambio de aceite, filtros, lubricantes, pulido de ópticas.",
     "url": "https://lubricentroelquebrachito.com/",
-    "image": "https://lubricentroelquebrachito.com/galpon.jpg",
+    "image": "https://lubricentroelquebrachito.com/og-image.jpg",
     "telephone": "+5493571419791",
     "address": {
       "@type": "PostalAddress",
@@ -296,8 +298,8 @@
     .services-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(180deg, rgba(9,8,6,0.93) 0%, rgba(9,8,6,0.88) 50%, rgba(9,8,6,0.95) 100%),
-        url('galpon.jpg') center 30%/cover no-repeat;
+        radial-gradient(ellipse at 85% 20%, rgba(229,98,26,0.08) 0%, transparent 55%),
+        var(--surface);
       z-index: 0;
     }
     .services .container { position: relative; z-index: 1; }
@@ -567,13 +569,6 @@
 
       /* Mobile: fondo absoluto igual que desktop, pero con padding-top grande
          para que la imagen sea visible sobre el texto */
-
-      .services { padding-top: 200px; }
-      .services-bg {
-        background:
-          linear-gradient(180deg, rgba(9,8,6,0.65) 0%, rgba(9,8,6,0.55) 40%, rgba(9,8,6,0.95) 70%, rgba(9,8,6,1) 100%),
-          url('galpon.jpg') center 60%/cover no-repeat;
-      }
 
       .why-section { padding-top: 200px; }
       .why-section-bg {
