@@ -54,8 +54,9 @@
       --text:    #E6D2AE; /* hueso cálido; antes #F7F3EE */
       --muted:   #7A6E60;
       --dim:     #3D3630;
-      --grad:    linear-gradient(90deg, var(--fire), var(--amber), var(--gold));
-      --grad135: linear-gradient(135deg, var(--fire), var(--amber), var(--gold));
+      /* Degradé "aceite de motor": reflejo claro arriba, ámbar profundo abajo */
+      --grad:    linear-gradient(180deg, #FFE7A0 0%, #F0B53A 40%, #C47A0E 75%, #7A4306 100%);
+      --grad135: linear-gradient(180deg, #FBD46A 0%, #E9A92A 55%, #C88514 100%);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
