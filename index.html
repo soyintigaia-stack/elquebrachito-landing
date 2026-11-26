@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#090806">
   <script>document.documentElement.classList.add('js');</script>
-  <link rel="preload" as="image" href="gondola-mann-mahle-800.webp" media="(max-width: 600px)">
-  <link rel="preload" as="image" href="gondola-mann-mahle.webp" media="(min-width: 601px)">
+  <link rel="preload" as="image" href="gondola-mann-mahle.webp">
   <title>El Quebrachito — Lubricentro Almafuerte</title>
   <meta name="description" content="Lubricentro en Almafuerte, Córdoba. Cambio de aceite, filtros, pulido de ópticas y más. 33 años de calidad y transparencia.">
   <meta property="og:title" content="El Quebrachito — Lubricentro Almafuerte">
@@ -603,11 +602,14 @@
       .cta-final .btn-primary { width: 100%; padding: 18px 20px; font-size: 16px; }
       .hero-bg {
         background:
-          radial-gradient(ellipse at 15% 60%, rgba(229,98,26,0.12) 0%, transparent 50%),
-          linear-gradient(180deg, rgba(9,8,6,0.92) 0%, rgba(9,8,6,0.88) 100%),
-          url('gondola-mann-mahle-800.webp') 70% center/cover no-repeat;
+          radial-gradient(ellipse at 15% 60%, rgba(229,98,26,0.10) 0%, transparent 50%),
+          linear-gradient(180deg, rgba(9,8,6,0.5) 0%, rgba(9,8,6,0.74) 36%, rgba(9,8,6,0.86) 70%, rgba(9,8,6,0.95) 100%),
+          url('gondola-mann-mahle.webp') 62% center/cover no-repeat;
       }
       .wa-float { bottom: 20px; right: 16px; }
+      .hero-content { text-shadow: 0 2px 14px rgba(9,8,6,0.85); }
+      .hero-title .line-fire { text-shadow: none; filter: drop-shadow(0 2px 10px rgba(9,8,6,0.8)); }
+      .hero-subtitle { color: #A39684; }
 
       /* Celular: secciones más compactas */
       .section { padding: 64px 0; }
