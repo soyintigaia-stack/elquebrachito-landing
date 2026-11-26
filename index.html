@@ -3,15 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090806">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="preload" as="image" href="gondola-mann-mahle-800.webp" media="(max-width: 600px)">
+  <link rel="preload" as="image" href="gondola-mann-mahle.webp" media="(min-width: 601px)">
   <title>El Quebrachito — Lubricentro Almafuerte</title>
-  <meta name="description" content="Lubricentro en Almafuerte, Córdoba. Cambio de aceite, filtros, pulido de ópticas y más. 31 años de calidad y transparencia.">
+  <meta name="description" content="Lubricentro en Almafuerte, Córdoba. Cambio de aceite, filtros, pulido de ópticas y más. 33 años de calidad y transparencia.">
   <meta property="og:title" content="El Quebrachito — Lubricentro Almafuerte">
-  <meta property="og:description" content="Cambio de aceite, filtros, pulido de ópticas y más. 31 años eligiendo la transparencia en Almafuerte, Córdoba.">
-  <meta property="og:image" content="https://elquebrachito-landing.vercel.app/gondola.jpg">
-  <meta property="og:url" content="https://elquebrachito-landing.vercel.app">
+  <meta property="og:description" content="Cambio de aceite, filtros, pulido de ópticas y más. 33 años eligiendo la transparencia en Almafuerte, Córdoba.">
+  <meta property="og:image" content="https://lubricentroelquebrachito.com/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://lubricentroelquebrachito.com/">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://elquebrachito-landing.vercel.app/gondola.jpg">
+  <meta name="twitter:image" content="https://lubricentroelquebrachito.com/og-image.jpg">
+  <link rel="canonical" href="https://lubricentroelquebrachito.com/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoPartsStore",
+    "name": "El Quebrachito",
+    "description": "Lubricentro y repuestos en Almafuerte, Córdoba. Cambio de aceite, filtros, lubricantes, pulido de ópticas.",
+    "url": "https://lubricentroelquebrachito.com/",
+    "image": "https://lubricentroelquebrachito.com/og-image.jpg",
+    "telephone": "+5493571419791",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Alem 133",
+      "addressLocality": "Almafuerte",
+      "addressRegion": "Córdoba",
+      "postalCode": "5854",
+      "addressCountry": "AR"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "13:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "15:30", "closes": "20:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "13:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "16:00", "closes": "19:00" }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
@@ -25,11 +57,12 @@
       --surface: #111009;
       --card:    #161410;
       --border:  rgba(201,136,26,0.12);
-      --text:    #F7F3EE;
+      --text:    #E6D2AE; /* hueso cálido; antes #F7F3EE */
       --muted:   #7A6E60;
       --dim:     #3D3630;
-      --grad:    linear-gradient(90deg, var(--fire), var(--amber), var(--gold));
-      --grad135: linear-gradient(135deg, var(--fire), var(--amber), var(--gold));
+      /* Degradé "aceite de motor": reflejo claro arriba, dorado ámbar, naranja fuego abajo */
+      --grad:    linear-gradient(180deg, #FFE7A0 0%, #F2B640 35%, #E5621A 78%, #B8420F 100%);
+      --grad135: linear-gradient(180deg, #FBD46A 0%, #EFA52C 50%, #E5621A 100%);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -109,6 +142,7 @@
     /* ─── HERO ────────────────────────────────────── */
     .hero {
       min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       position: relative;
@@ -121,7 +155,7 @@
         radial-gradient(ellipse at 15% 60%, rgba(229,98,26,0.12) 0%, transparent 50%),
         radial-gradient(ellipse at 85% 40%, rgba(191,155,48,0.08) 0%, transparent 50%),
         linear-gradient(180deg, rgba(9,8,6,0.92) 0%, rgba(9,8,6,0.88) 100%),
-        url('gondola.jpg') center/cover no-repeat;
+        url('gondola-mann-mahle.webp') center/cover no-repeat;
     }
     .hero-grid {
       position: absolute; inset: 0;
@@ -270,7 +304,7 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(180deg, rgba(9,8,6,0.93) 0%, rgba(9,8,6,0.88) 50%, rgba(9,8,6,0.95) 100%),
-        url('galpon.jpg') center 30%/cover no-repeat;
+        url('galpon.webp') center 30%/cover no-repeat;
       z-index: 0;
     }
     .services .container { position: relative; z-index: 1; }
@@ -328,7 +362,7 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(90deg, rgba(9,8,6,0.97) 0%, rgba(9,8,6,0.75) 55%, rgba(9,8,6,0.4) 100%),
-        url('mecanico.jpg') right center/cover no-repeat;
+        url('mecanico.webp') right center/cover no-repeat;
       z-index: 0;
     }
     .why-section .container { position: relative; z-index: 1; }
@@ -427,7 +461,7 @@
       position: absolute; inset: 0;
       background:
         linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.72) 30%, rgba(9,8,6,0.72) 70%, rgba(9,8,6,1) 100%),
-        url('lago.jpg') center 40%/cover no-repeat;
+        url('lago.webp') center 40%/cover no-repeat;
       z-index: 0;
     }
     .ubicacion-section .container { position: relative; z-index: 1; }
@@ -469,8 +503,10 @@
     .cta-final-bg {
       position: absolute; inset: 0;
       background:
-        linear-gradient(180deg, rgba(9,8,6,1) 0%, rgba(9,8,6,0.82) 20%, rgba(9,8,6,0.82) 80%, rgba(9,8,6,1) 100%),
-        url('local-noche.jpg') center/cover no-repeat;
+        radial-gradient(ellipse at 50% 100%, rgba(229,98,26,0.14) 0%, transparent 60%),
+        radial-gradient(ellipse at 50% 0%, rgba(242,182,64,0.06) 0%, transparent 50%),
+        var(--surface);
+      border-top: 1px solid var(--border);
     }
     .cta-final h2 {
       font-family: 'Barlow Condensed', sans-serif;
@@ -528,6 +564,14 @@
       box-shadow: 0 4px 24px rgba(229,98,26,0.35);
       transition: transform 0.2s, box-shadow 0.2s;
     }
+    .wa-float { opacity: 1; transition: opacity 0.25s, transform 0.2s, box-shadow 0.2s; }
+    html.js .wa-float.is-hidden { opacity: 0; pointer-events: none; }
+    /* Carga diferida de fondos: hasta que la sección se acerca a la pantalla, sin foto */
+    html.js .lazy-bg:not(.bg-in) > [class$="-bg"] { background-image: none !important; }
+    .btn-row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .card-link { margin-top: auto; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+    .card-link:hover { color: var(--text); }
+    .info-value a { color: inherit; text-decoration: none; }
     .wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 32px rgba(229,98,26,0.5); }
     .wa-float svg { width: 28px; height: 28px; fill: #0A0806; }
 
@@ -541,33 +585,64 @@
       /* Mobile: fondo absoluto igual que desktop, pero con padding-top grande
          para que la imagen sea visible sobre el texto */
 
-      .services { padding-top: 200px; }
-      .services-bg {
-        background:
-          linear-gradient(180deg, rgba(9,8,6,0.65) 0%, rgba(9,8,6,0.55) 40%, rgba(9,8,6,0.95) 70%, rgba(9,8,6,1) 100%),
-          url('galpon.jpg') center 60%/cover no-repeat;
-      }
-
       .why-section { padding-top: 200px; }
       .why-section-bg {
         background:
           linear-gradient(180deg, rgba(9,8,6,0.2) 0%, rgba(9,8,6,0.5) 40%, rgba(9,8,6,0.95) 70%, rgba(9,8,6,1) 100%),
-          url('mecanico.jpg') center 20%/cover no-repeat;
+          url('mecanico.webp') center 20%/cover no-repeat;
       }
 
       .ubicacion-section { padding-top: 180px; }
       .ubicacion-bg {
         background:
           linear-gradient(180deg, rgba(9,8,6,0.55) 0%, rgba(9,8,6,0.65) 40%, rgba(9,8,6,0.95) 70%, rgba(9,8,6,1) 100%),
-          url('lago.jpg') center 55%/cover no-repeat;
+          url('lago.webp') center 55%/cover no-repeat;
       }
 
-      .cta-final { padding-top: 200px; }
-      .cta-final-bg {
+      .cta-final { padding: 88px 0; }
+      .cta-final .btn-primary { width: 100%; padding: 18px 20px; font-size: 16px; }
+      .hero-bg {
         background:
-          linear-gradient(180deg, rgba(9,8,6,0.75) 0%, rgba(9,8,6,0.65) 40%, rgba(9,8,6,0.92) 75%, rgba(9,8,6,1) 100%),
-          url('local-noche.jpg') center 30%/cover no-repeat;
+          radial-gradient(ellipse at 15% 60%, rgba(229,98,26,0.12) 0%, transparent 50%),
+          linear-gradient(180deg, rgba(9,8,6,0.92) 0%, rgba(9,8,6,0.88) 100%),
+          url('gondola-mann-mahle-800.webp') 70% center/cover no-repeat;
       }
+      .wa-float { bottom: 20px; right: 16px; }
+
+      /* Celular: secciones más compactas */
+      .section { padding: 64px 0; }
+      .services-grid { margin-top: 32px; }
+      .service-card {
+        display: grid;
+        grid-template-columns: 44px 1fr;
+        column-gap: 16px;
+        row-gap: 6px;
+        align-items: center;
+        padding: 22px 20px;
+      }
+      .service-icon { width: 44px; height: 44px; font-size: 20px; grid-row: span 1; }
+      .service-name { font-size: 18px; }
+      .service-desc, .card-link { grid-column: 1 / -1; }
+      .card-link { margin-top: 6px; }
+      .service-card:hover { transform: none; }
+      .why-grid { margin-top: 32px; gap: 16px; }
+      .why-card { padding: 28px 24px; }
+      .why-num { font-size: 40px; margin-bottom: 10px; }
+      .location-wrap { margin-top: 32px; gap: 32px; }
+      .btn-row { flex-direction: column; }
+      .btn-row .btn-primary, .btn-row .btn-secondary { width: 100%; }
+      .map-wrap { height: 260px; }
+      .years-band { padding: 28px 16px; }
+      .services { padding-top: 200px; }
+      .services-bg {
+        background:
+          linear-gradient(180deg, rgba(9,8,6,0.65) 0%, rgba(9,8,6,0.55) 40%, rgba(9,8,6,0.95) 70%, rgba(9,8,6,1) 100%),
+          url('galpon.webp') center 60%/cover no-repeat;
+      }
+      .why-section { padding-top: 200px; }
+      .ubicacion-section { padding-top: 160px !important; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .footer-logo { font-size: 16px; }
     }
   </style>
 </head>
@@ -576,7 +651,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo">El <span>Quebrachito</span></a>
-  <a href="https://wa.me/5493571419791" target="_blank" class="nav-cta">
+  <a href="https://wa.me/5493571419791?text=Hola%21%20Les%20escribo%20desde%20la%20web%20de%20El%20Quebrachito%2C%20quer%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" data-wa="nav" class="nav-cta" aria-label="Consultar por WhatsApp">
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.874L.057 23.169a.75.75 0 00.918.98l5.42-1.396A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.724 9.724 0 01-4.964-1.364l-.354-.21-3.666.944.98-3.564-.23-.368A9.722 9.722 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
     <span>Consultar</span>
   </a>
@@ -600,7 +675,7 @@
         Cambio de aceite, filtros y más — el lubricentro de confianza de Almafuerte.
       </p>
       <div class="hero-actions">
-        <a href="https://wa.me/5493571419791" target="_blank" class="btn-primary">
+        <a href="https://wa.me/5493571419791?text=Hola%21%20Quer%C3%ADa%20consultar%20por%20un%20cambio%20de%20aceite%20y%20filtros%20para%20mi%20veh%C3%ADculo." target="_blank" rel="noopener" data-wa="hero" class="btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.874L.057 23.169a.75.75 0 00.918.98l5.42-1.396A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.724 9.724 0 01-4.964-1.364l-.354-.21-3.666.944.98-3.564-.23-.368A9.722 9.722 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
           Consultar por WhatsApp
         </a>
@@ -611,7 +686,7 @@
 </section>
 
 <!-- SERVICIOS -->
-<section class="section services" id="servicios">
+<section class="section services lazy-bg" id="servicios">
   <div class="services-bg"></div>
   <div class="container">
     <div class="section-label">Lo que hacemos</div>
@@ -643,6 +718,7 @@
         <div class="service-icon">🏪</div>
         <div class="service-name">Repuestos y accesorios</div>
         <div class="service-desc">Venta de repuestos y accesorios para tu auto. Consultanos por tu modelo.</div>
+        <a href="https://wa.me/5493571419791?text=Hola%21%20Busco%20un%20repuesto.%20Mi%20veh%C3%ADculo%20es%20%28marca%2C%20modelo%20y%20a%C3%B1o%29%3A%20" target="_blank" rel="noopener" data-wa="repuesto" class="card-link">Consultar repuesto →</a>
       </div>
     </div>
   </div>
@@ -651,13 +727,13 @@
 <!-- AÑOS -->
 <div class="years-band">
   <div class="years-inner">
-    <div class="years-num">31</div>
+    <div class="years-num">33</div>
     <div class="years-label">Años<br>eligiendo la<br>transparencia</div>
   </div>
 </div>
 
 <!-- POR QUÉ -->
-<section class="section why-section" id="nosotros">
+<section class="section why-section lazy-bg" id="nosotros">
   <div class="why-section-bg"></div>
   <div class="container">
     <div class="section-label">Por qué elegirnos</div>
@@ -668,7 +744,7 @@
       <div class="why-card">
         <div class="why-num">01</div>
         <div class="why-title">Honestidad ante todo</div>
-        <div class="why-text">Te decimos lo que tu auto necesita, sin venderte lo que no hace falta. 31 años construyendo confianza en Almafuerte.</div>
+        <div class="why-text">Te decimos lo que tu auto necesita, sin venderte lo que no hace falta. 33 años construyendo confianza en Almafuerte.</div>
       </div>
       <div class="why-card">
         <div class="why-num">02</div>
@@ -685,7 +761,7 @@
 </section>
 
 <!-- UBICACIÓN -->
-<section class="section ubicacion-section" id="ubicacion" style="padding-top:0;">
+<section class="section ubicacion-section lazy-bg" id="ubicacion" style="padding-top:0;">
   <div class="ubicacion-bg"></div>
   <div class="container">
     <div class="section-label">Dónde estamos</div>
@@ -702,21 +778,35 @@
         <div class="info-block">
           <div class="info-label">Horarios</div>
           <div class="info-value">Lunes a Viernes</div>
-          <div class="info-sub">Consultar horario por WhatsApp</div>
+          <div class="info-sub">8 a 13 h · 15:30 a 20:30 h</div>
+          <div class="info-value" style="margin-top:12px;">Sábados</div>
+          <div class="info-sub">8 a 13 h · 16 a 19 h</div>
         </div>
         <div class="info-block">
           <div class="info-label">WhatsApp</div>
-          <div class="info-value">Consultar disponibilidad</div>
+          <div class="info-value"><a href="https://wa.me/5493571419791?text=Hola%21%20Quer%C3%ADa%20consultar%20si%20puedo%20pasar%20hoy%20por%20el%20local." target="_blank" rel="noopener" data-wa="ubicacion">3571 41-9791</a></div>
           <div class="info-sub">Respondemos a la brevedad</div>
         </div>
-        <a href="https://wa.me/5493571419791" target="_blank" class="btn-primary" style="align-self:flex-start;">
-          Escribinos ahora
-        </a>
+        <div class="btn-row">
+          <a href="https://wa.me/5493571419791?text=Hola%21%20Quer%C3%ADa%20consultar%20si%20puedo%20pasar%20hoy%20por%20el%20local." target="_blank" rel="noopener" data-wa="ubicacion" class="btn-primary">Escribinos ahora</a>
+          <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Alem+133,+Almafuerte,+C%C3%B3rdoba,+Argentina" target="_blank" rel="noopener" class="btn-secondary">Cómo llegar</a>
+        </div>
+        <!-- GOOGLE BUSINESS: cuando exista el perfil, descomentar y pegar el link real
+             (en el perfil: "Compartir" para el link, "Pedir reseñas" para el de reseñas).
+        <div class="info-block">
+          <div class="info-label">Opiniones</div>
+          <div class="info-value">Mirá lo que dicen de nosotros</div>
+          <div class="btn-row" style="margin-top:12px;">
+            <a href="PEGAR_LINK_DEL_PERFIL" target="_blank" rel="noopener" class="btn-secondary">Ver en Google</a>
+            <a href="PEGAR_LINK_DE_RESEÑAS" target="_blank" rel="noopener" class="btn-secondary">Dejanos tu reseña</a>
+          </div>
+        </div>
+        -->
       </div>
       <div class="map-wrap">
         <iframe
           src="https://maps.google.com/maps?q=Alem+133,+Almafuerte,+Córdoba,+Argentina&output=embed&z=16"
-          allowfullscreen loading="lazy"
+          title="Mapa: Alem 133, Almafuerte" allowfullscreen loading="lazy"
           referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
@@ -733,7 +823,7 @@
       <span class="grad-text">último cambio de aceite?</span>
     </h2>
     <p>No esperes más. Escribinos y coordinamos en el momento.</p>
-    <a href="https://wa.me/5493571419791" target="_blank" class="btn-primary">
+    <a href="https://wa.me/5493571419791?text=Hola%21%20Quiero%20reservar%20un%20turno%20para%20cambio%20de%20aceite.%20Mi%20veh%C3%ADculo%20es%3A%20" target="_blank" rel="noopener" data-wa="turno" class="btn-primary">
       Reservar turno por WhatsApp
     </a>
   </div>
@@ -746,16 +836,46 @@
       <div class="footer-logo">Lubricentro de Almafuerte — El Quebrachito</div>
       <div class="footer-copy">© 2026 · Almafuerte, Córdoba</div>
       <div class="footer-copy" style="margin-top:6px;">
-        Producido por <a href="https://instagram.com/soyintigaia" target="_blank" style="color:var(--muted);text-decoration:none;">Sistema Pulso</a>
+        Producido por <a href="https://instagram.com/soyintigaia" target="_blank" rel="noopener" style="color:var(--muted);text-decoration:none;">Sistema Pulso</a>
       </div>
     </div>
   </div>
 </footer>
 
 <!-- WHATSAPP FLOTANTE -->
-<a href="https://wa.me/5493571419791" target="_blank" class="wa-float" title="Escribinos por WhatsApp">
+<a href="https://wa.me/5493571419791?text=Hola%21%20Les%20escribo%20desde%20la%20web%20de%20El%20Quebrachito%2C%20quer%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" data-wa="flotante" class="wa-float" title="Escribinos por WhatsApp" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.561 4.14 1.535 5.874L.057 23.169a.75.75 0 00.918.98l5.42-1.396A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.724 9.724 0 01-4.964-1.364l-.354-.21-3.666.944.98-3.564-.23-.368A9.722 9.722 0 012.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
 
+<script>
+  // Vercel Web Analytics (activar en el panel de Vercel: proyecto > Analytics)
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  // Evento por cada clic en WhatsApp, con el lugar del botón
+  document.querySelectorAll('[data-wa]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      window.va('event', { name: 'whatsapp_click', data: { ubicacion: a.dataset.wa } });
+    });
+  });
+  if ('IntersectionObserver' in window) {
+    // Fondos con carga diferida
+    var lazyIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('bg-in'); lazyIO.unobserve(e.target); }
+      });
+    }, { rootMargin: '400px 0px' });
+    document.querySelectorAll('.lazy-bg').forEach(function (el) { lazyIO.observe(el); });
+    // El botón flotante aparece cuando el botón principal del inicio ya no se ve
+    var fab = document.querySelector('.wa-float');
+    var heroBtn = document.querySelector('.hero .btn-primary');
+    if (fab && heroBtn) {
+      new IntersectionObserver(function (entries) {
+        fab.classList.toggle('is-hidden', entries[0].isIntersecting);
+      }).observe(heroBtn);
+    }
+  } else {
+    document.querySelectorAll('.lazy-bg').forEach(function (el) { el.classList.add('bg-in'); });
+  }
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
